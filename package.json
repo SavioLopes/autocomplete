@@ -16,5 +16,9 @@
     "url": "https://github.com/SavioLopes/autocomplete/issues"
   },
   "homepage": "https://github.com/SavioLopes/autocomplete#readme",
-  "dependencies": {}
+  "dependencies": {
+    "mongodb": "^3.1.1",
+    "nconf": "^0.10.0",
+    "winston": "^3.0.0"
+  }
 }
