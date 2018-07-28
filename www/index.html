@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html>
- 
-<head>
-  <title>Autocomplete</title>
-</head>
- 
-<body>
-  <form>
-    Event: <input type="text" name="search" id="search" oninput="httpGet(this.value)" list="searchresults" autocomplete="off">
-    <datalist id="searchresults">
-    </datalist>
-  </form>
+  <head>
+    <title>Autocomplete</title>
+  </head>
+  <body>
+    <form>
+      Event: <input type="text" name="search" id="search" oninput="httpGet(this.value)" list="searchresults" autocomplete="off">
+      <datalist id="searchresults">
+      </datalist>
+    </form>
+  </body>
   <script>
-      function buildResult(result) {
-        var jsonResult = JSON.parse(result);
-        var html = '';
-        jsonResult.forEach(element => {
-          html += '<option>' + element.event + '</option>';
-        });
-        return html;
-      }
-      function httpGet(event)
-      {
-        var url = 'http://localhost:3000/events?event=' + event
-        var xmlHttp = new XMLHttpRequest();
-        try {
-          if (event) {
-            xmlHttp.open("GET", url, false);
-            xmlHttp.send();
-          }
-          if (xmlHttp.status === 200) {
-            return document.getElementById("searchresults").innerHTML = buildResult(xmlHttp.responseText);
-          }
-          return document.getElementById("searchresults").innerHTML = "";
-        } catch (e) {
-          alert(e);
-          return document.getElementById("searchresults").innerHTML = "";
+    function buildResult(result) {
+      var jsonResult = JSON.parse(result);
+      var html = '';
+      jsonResult.forEach(element => {
+        html += '<option>' + element.event + '</option>';
+      });
+      return html;
+    }
+    function httpGet(event) {
+      var url = 'http://localhost:3000/events?event=' + event;
+      var xmlHttp = new XMLHttpRequest();
+      try {
+        if (event) {
+          xmlHttp.open("GET", url, false);
+          xmlHttp.send();
         }
+        if (xmlHttp.status === 200) {
+          return document.getElementById("searchresults").innerHTML = buildResult(xmlHttp.responseText);
+        }
+        return document.getElementById("searchresults").innerHTML = "";
+      } catch (e) {
+        alert(e);
+        return document.getElementById("searchresults").innerHTML = "";
       }
+    }
   </script>
-</body>
- 
 </html>
