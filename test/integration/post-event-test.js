@@ -9,6 +9,7 @@ describe('#Integration Tests - POST /events', () => {
     let app;
 
     before(async () => {
+      await database.connect();
       app = await server.start();
     });
 
@@ -18,6 +19,7 @@ describe('#Integration Tests - POST /events', () => {
 
     after(async () => {
       await database.getCollection('events').remove();
+      await database.close();
       await server.stop();
     });
 
@@ -40,10 +42,12 @@ describe('#Integration Tests - POST /events', () => {
     let app;
 
     before(async () => {
+      await database.connect();
       app = await server.start();
     });
 
     after(async () => {
+      await database.close();
       await server.stop();
     });
 

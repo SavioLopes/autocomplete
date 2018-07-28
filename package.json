@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/SavioLopes/autocomplete#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongodb": "^3.1.1",
     "morgan": "^1.9.0",
