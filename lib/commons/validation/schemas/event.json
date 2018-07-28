@@ -1,0 +1,13 @@
+{
+  "id": "event",
+  "type": "object",
+  "required": ["event"],
+  "properties": {
+    "event": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  }
+}
