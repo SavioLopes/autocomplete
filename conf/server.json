@@ -1,3 +1,4 @@
 {
-  "MONGO_CONNECTION": "mongodb://localhost:27017/autocomplete"
+  "MONGO_CONNECTION": "mongodb://localhost:27017/autocomplete",
+  "URL_STORAGE_EVENTS": "https://storage.googleapis.com/dito-questions/events.json"
 }
