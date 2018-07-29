@@ -20,7 +20,7 @@
       return html;
     }
     function httpGet(event) {
-      var url = 'http://localhost:3000/events?event=' + event;
+      var url = 'http://localhost:3000/events?event=' + event + '&limit=20';
       var xmlHttp = new XMLHttpRequest();
       try {
         if (event) {
