@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "mocha": "mocha",
-    "test": "./node_modules/mocha/bin/_mocha",
+    "test": "mocha",
     "start": "node index.js"
   },
   "repository": {
