@@ -9,7 +9,7 @@ const manipulationData = (() => {
     const { events } = JSON.parse(result);
     const dictionary = buildToDictionary(events);
     const objResult = buildObjectResult(dictionary);
-    sort(objResult);
+    sort(objResult.timeline, 'timestamp');
     return objResult;
   };
 
